@@ -1,201 +1,245 @@
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-		<link rel="stylesheet" href="index.css">
-		<link rel="icon" href="favicon.ico">
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		/>
+		<link rel="icon" href="favicon.ico" />
 		<title>Mohammed Nayeem – Portfolio</title>
 	</head>
-	<body>
-		<header class="navbar">
-			<nav>
-				<a href="#about">About</a>
-				<a href="#experience">Experience</a>
-				<a href="#projects">Projects</a>
-				<a href="#skills">Skills</a>
-				<a href="#education">Education</a>
-				<a href="#achievements">Achievements</a>
-				<a href="#certifications">Certifications</a>
-				<a href="#contact">Contact</a>
+	<body class="font-sans text-gray-800 overflow-x-hidden">
+		<!-- Navbar -->
+		<header
+			class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-white/20 py-4 shadow-sm"
+		>
+			<nav
+				class="flex justify-center flex-wrap gap-5 max-w-6xl mx-auto px-4 text-gray-800"
+			>
+				<a href="#about" class="px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition transform hover:-translate-y-0.5 shadow hover:shadow-lg">About</a>
+				<a href="#experience" class="px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition transform hover:-translate-y-0.5 shadow hover:shadow-lg">Experience</a>
+				<a href="#projects" class="px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition transform hover:-translate-y-0.5 shadow hover:shadow-lg">Projects</a>
+				<a href="#skills" class="px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition transform hover:-translate-y-0.5 shadow hover:shadow-lg">Skills</a>
+				<a href="#education" class="px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition transform hover:-translate-y-0.5 shadow hover:shadow-lg">Education</a>
+				<a href="#achievements" class="px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition transform hover:-translate-y-0.5 shadow hover:shadow-lg">Achievements</a>
+				<a href="#certifications" class="px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition transform hover:-translate-y-0.5 shadow hover:shadow-lg">Certifications</a>
+				<a href="#contact" class="px-4 py-2 rounded-full font-medium hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition transform hover:-translate-y-0.5 shadow hover:shadow-lg">Contact</a>
 			</nav>
 		</header>
 
-		<main>
-			<section id="about" class="section">
-				<div class="section-content">
-					<div class="profile-image">
-						<img src="Nayeem_glasses.png" alt="Mohammed Nayeem" />
+		<!-- Main -->
+		<main class="mt-20 snap-y snap-mandatory overflow-y-auto">
+			<!-- About -->
+			<section id="about" class="min-h-screen flex items-center justify-center p-8 snap-start">
+				<div class="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 max-w-5xl w-full p-10 flex flex-wrap gap-8 items-center animate-fadeInUp">
+					<div class="flex-shrink-0">
+						<img src="Nayeem_glasses.png" alt="Mohammed Nayeem" class="rounded-full border-4 border-white w-60 h-60 object-cover shadow-xl transition-transform hover:scale-105" />
 					</div>
-					<div class="header-details">
-						<h1>Mohammed Nayeem</h1>
-						<div class="bio">
-							Full-stack developer and graphics enthusiast (C/C++, OpenGL, SFML, ImGui).  
-							I enjoy building practical tools (Go, Node.js) and polished UIs (React/Next.js).  
-							Final-year B.E. CSE student (graduating June 2026) with a strong competitive programming background.
-						</div>
+					<div class="flex-1 min-w-[300px]">
+						<h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent mb-4">
+							Mohammed Nayeem
+						</h1>
+						<p class="text-gray-600 leading-relaxed text-lg">
+							Full-stack developer and graphics enthusiast (C/C++, OpenGL, SFML,
+							ImGui). I enjoy building practical tools (Go, Node.js) and
+							polished UIs (React/Next.js). Final-year B.E. CSE student
+							(graduating June 2026) with a strong competitive programming
+							background.
+						</p>
 					</div>
 				</div>
 			</section>
 
-			<section id="experience" class="section">
-				<div class="section-content">
-					<h2>Experience</h2>
-					<div class="timeline-item">
-						<h3><span class="company">Aiverex Innovations</span> – <span class="role">Full-Stack Developer Intern</span></h3>
-						<div class="duration">May 2024 – Aug 2024</div>
-						<ul>
-							<li>Collaborated on KPIs and process analysis for an NDA project.</li>
-							<li>Built a scalable web app using React and Firebase.</li>
-							<li>Achieved Lighthouse SEO (90) and Performance (96) scores.</li>
+			<!-- Experience -->
+			<section id="experience" class="min-h-screen flex items-center justify-center p-8 snap-start">
+				<div class="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 max-w-5xl w-full p-10 animate-fadeInUp">
+					<h2 class="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent relative after:content-[''] after:block after:w-16 after:h-1 after:mx-auto after:mt-2 after:rounded after:bg-gradient-to-r after:from-indigo-500 after:to-purple-600">Experience</h2>
+					<div class="mb-6 p-6 bg-indigo-500/10 border-l-4 border-indigo-500 rounded-xl hover:translate-x-2 transition-transform">
+						<h3 class="text-lg font-semibold text-gray-800"><span class="text-indigo-500 font-bold">Aiverex Innovations</span> – <span class="text-purple-600">Full-Stack Developer Intern</span></h3>
+						<div class="italic text-gray-500 mb-3">May 2024 – Aug 2024</div>
+						<ul class="list-none space-y-2">
+							<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Collaborated on KPIs and process analysis for an NDA project.</li>
+							<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Built a scalable web app using React and Firebase.</li>
+							<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Achieved Lighthouse SEO (90) and Performance (96) scores.</li>
 						</ul>
 					</div>
-					<div class="timeline-item">
-						<h3><span class="company">Bayzcrypt</span> – <span class="role">Open-Source Contributor</span></h3>
-						<div class="duration">Sep 2024 – Nov 2024</div>
-						<ul>
-							<li>Contributed ~400 LOC to decentralized crypto transfer project.</li>
-							<li>Worked on frontend in React + Bootstrap; used Figma for design.</li>
+					<div class="p-6 bg-indigo-500/10 border-l-4 border-indigo-500 rounded-xl hover:translate-x-2 transition-transform">
+						<h3 class="text-lg font-semibold text-gray-800"><span class="text-indigo-500 font-bold">Bayzcrypt</span> – <span class="text-purple-600">Open-Source Contributor</span></h3>
+						<div class="italic text-gray-500 mb-3">Sep 2024 – Nov 2024</div>
+						<ul class="list-none space-y-2">
+							<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Contributed ~400 LOC to decentralized crypto transfer project.</li>
+							<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Worked on frontend in React + Bootstrap; used Figma for design.</li>
 						</ul>
 					</div>
 				</div>
 			</section>
 
-			<section id="projects" class="section">
-				<div class="section-content">
-					<h2>Projects</h2>
-					<div class="project-grid">
-						<div class="project-card">
-							<h3>Gamified Platform to Learn Legal Rights</h3>
-							<div class="project-tech">Next.js, TypeScript, Express.js, PostgreSQL, Supabase</div>
-							<ul>
-								<li>Interactive platform with mini-games, animated modules, GenAI quizzes.</li>
+			<!-- Projects -->
+			<section id="projects" class="min-h-screen flex items-center justify-center p-8 snap-start">
+				<div class="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 max-w-6xl w-full p-10 animate-fadeInUp">
+					<h2 class="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent relative after:content-[''] after:block after:w-16 after:h-1 after:mx-auto after:mt-2 after:rounded after:bg-gradient-to-r after:from-indigo-500 after:to-purple-600">Projects</h2>
+					<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+						<div class="relative bg-white/80 p-6 rounded-xl shadow-md border border-white/20 hover:-translate-y-2 transition-transform">
+							<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-t-xl"></div>
+							<h3 class="text-xl font-semibold mb-2">Gamified Platform to Learn Legal Rights</h3>
+							<div class="text-sm text-indigo-600 font-medium mb-2 bg-indigo-500/10 inline-block px-3 py-1 rounded-full">Next.js, TypeScript, Express.js, PostgreSQL, Supabase</div>
+							<ul class="list-none space-y-1">
+								<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Interactive platform with mini-games, animated modules, GenAI quizzes.</li>
 							</ul>
 						</div>
-						<div class="project-card">
-							<h3>Top-Down 2D Game</h3>
-							<div class="project-tech">C, C++, OpenGL, SFML, ImGui</div>
-							<ul>
-								<li>Time-travel storyline game; SFML for input, OpenGL for rendering.</li>
+						<div class="relative bg-white/80 p-6 rounded-xl shadow-md border border-white/20 hover:-translate-y-2 transition-transform">
+							<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-t-xl"></div>
+							<h3 class="text-xl font-semibold mb-2">Top-Down 2D Game</h3>
+							<div class="text-sm text-indigo-600 font-medium mb-2 bg-indigo-500/10 inline-block px-3 py-1 rounded-full">C, C++, OpenGL, SFML, ImGui</div>
+							<ul class="list-none space-y-1">
+								<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Time-travel storyline game; SFML for input, OpenGL for rendering.</li>
 							</ul>
 						</div>
-						<div class="project-card">
-							<h3>URL Shortener</h3>
-							<div class="project-tech">Go, Gin, Redis, Docker</div>
-							<ul>
-								<li>Scalable REST API with Redis lookup and Docker deployment.</li>
+						<div class="relative bg-white/80 p-6 rounded-xl shadow-md border border-white/20 hover:-translate-y-2 transition-transform">
+							<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-t-xl"></div>
+							<h3 class="text-xl font-semibold mb-2">URL Shortener</h3>
+							<div class="text-sm text-indigo-600 font-medium mb-2 bg-indigo-500/10 inline-block px-3 py-1 rounded-full">Go, Gin, Redis, Docker</div>
+							<ul class="list-none space-y-1">
+								<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Scalable REST API with Redis lookup and Docker deployment.</li>
 							</ul>
 						</div>
-						<div class="project-card">
-							<h3>Nebula npm Package</h3>
-							<div class="project-tech">Node.js, JavaScript</div>
-							<ul>
-								<li>Backend boilerplate templates for JS/TS/Flask stacks with DB support.</li>
+						<div class="relative bg-white/80 p-6 rounded-xl shadow-md border border-white/20 hover:-translate-y-2 transition-transform">
+							<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-t-xl"></div>
+							<h3 class="text-xl font-semibold mb-2">Nebula npm Package</h3>
+							<div class="text-sm text-indigo-600 font-medium mb-2 bg-indigo-500/10 inline-block px-3 py-1 rounded-full">Node.js, JavaScript</div>
+							<ul class="list-none space-y-1">
+								<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Backend boilerplate templates for JS/TS/Flask stacks with DB support.</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section id="skills" class="section">
-				<div class="section-content">
-					<h2>Skills</h2>
-					<table class="skills-table">
-						<tr>
-							<td><strong>Languages</strong></td>
-							<td>C, C++, Python, Java, JS, TS, GLSL, Go</td>
-						</tr>
-						<tr>
-							<td><strong>Frameworks</strong></td>
-							<td>React, Next.js, Node.js, Express, SFML, OpenGL</td>
-						</tr>
-						<tr>
-							<td><strong>Databases</strong></td>
-							<td>PostgreSQL, Supabase, Firebase, MongoDB</td>
-						</tr>
-						<tr>
-							<td><strong>Tools</strong></td>
-							<td>Git, Docker, Linux, Neovim, Tmux</td>
-						</tr>
-						<tr>
-							<td><strong>Competitive Programming</strong></td>
-							<td>LeetCode Knight (1974), CodeChef 3★, Codeforces (1192)</td>
-						</tr>
+			<!-- Skills -->
+			<section id="skills" class="min-h-screen flex items-center justify-center p-8 snap-start">
+				<div class="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 max-w-4xl w-full p-10 animate-fadeInUp">
+					<h2 class="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent relative after:content-[''] after:block after:w-16 after:h-1 after:mx-auto after:mt-2 after:rounded after:bg-gradient-to-r after:from-indigo-500 after:to-purple-600">Skills</h2>
+					<table class="w-full text-left shadow-md rounded-xl overflow-hidden">
+						<tbody>
+							<tr class="border-b">
+								<td class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold p-4 w-1/4">Languages</td>
+								<td class="bg-white/80 p-4">C, C++, Python, Java, JS, TS, GLSL, Go</td>
+							</tr>
+							<tr class="border-b">
+								<td class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold p-4">Frameworks</td>
+								<td class="bg-white/80 p-4">React, Next.js, Node.js, Express, SFML, OpenGL</td>
+							</tr>
+							<tr class="border-b">
+								<td class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold p-4">Databases</td>
+								<td class="bg-white/80 p-4">PostgreSQL, Supabase, Firebase, MongoDB</td>
+							</tr>
+							<tr class="border-b">
+								<td class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold p-4">Tools</td>
+								<td class="bg-white/80 p-4">Git, Docker, Linux, Neovim, Tmux</td>
+							</tr>
+							<tr>
+								<td class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold p-4">Competitive Programming</td>
+								<td class="bg-white/80 p-4">LeetCode Knight (1974), CodeChef 3★, Codeforces (1192)</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</section>
 
-			<section id="education" class="section">
-				<div class="section-content">
-					<h2>Education</h2>
-					<div class="timeline-item">
-						<h3><span class="company">Chennai Institute of Technology</span></h3>
-						<div class="duration">June 2026</div>
-						<ul>
-							<li>B.E. Computer Science & Engineering</li>
-							<li>CGPA: 8.91</li>
+			<!-- Education -->
+			<section id="education" class="min-h-screen flex items-center justify-center p-8 snap-start">
+				<div class="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 max-w-4xl w-full p-10 animate-fadeInUp">
+					<h2 class="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent relative after:content-[''] after:block after:w-16 after:h-1 after:mx-auto after:mt-2 after:rounded after:bg-gradient-to-r after:from-indigo-500 after:to-purple-600">Education</h2>
+					<div class="p-6 bg-indigo-500/10 border-l-4 border-indigo-500 rounded-xl hover:translate-x-2 transition-transform">
+						<h3 class="text-lg font-semibold text-gray-800">Chennai Institute of Technology</h3>
+						<div class="italic text-gray-500 mb-3">June 2026</div>
+						<ul class="list-none space-y-2">
+							<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">B.E. Computer Science & Engineering</li>
+							<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">CGPA: 8.91</li>
 						</ul>
 					</div>
 				</div>
 			</section>
 
-			<section id="achievements" class="section">
-				<div class="section-content">
-					<h2>Achievements</h2>
-					<ul>
-						<li>Intel OneAPI Finalist – Shaastra, IIT Madras (2024)</li>
-						<li>1st Place – Revamp Academy Hackathon (2024)</li>
-						<li>Top-10 – BITS Pilani Hackathon (2023)</li>
-						<li>TCS CodeVita 2024 – Top-900 among 10,000</li>
+			<!-- Achievements -->
+			<section id="achievements" class="min-h-screen flex items-center justify-center p-8 snap-start">
+				<div class="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 max-w-4xl w-full p-10 animate-fadeInUp">
+					<h2 class="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent relative after:content-[''] after:block after:w-16 after:h-1 after:mx-auto after:mt-2 after:rounded after:bg-gradient-to-r after:from-indigo-500 after:to-purple-600">Achievements</h2>
+					<ul class="list-none space-y-2">
+						<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Intel OneAPI Finalist – Shaastra, IIT Madras (2024)</li>
+						<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">1st Place – Revamp Academy Hackathon (2024)</li>
+						<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Top-10 – BITS Pilani Hackathon (2023)</li>
+						<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">TCS CodeVita 2024 – Top-900 among 10,000</li>
 					</ul>
 				</div>
 			</section>
 
-			<section id="certifications" class="section">
-				<div class="section-content">
-					<h2>Certifications</h2>
-					<ul>
-						<li>NPTEL – Ethical Hacking</li>
-						<li>JLPT N5</li>
-						<li>Google Cloud – GenAI Study Jam</li>
-						<li>CISCO CCNA – Networking, Cybersecurity</li>
+			<!-- Certifications -->
+			<section id="certifications" class="min-h-screen flex items-center justify-center p-8 snap-start">
+				<div class="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 max-w-4xl w-full p-10 animate-fadeInUp">
+					<h2 class="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent relative after:content-[''] after:block after:w-16 after:h-1 after:mx-auto after:mt-2 after:rounded after:bg-gradient-to-r after:from-indigo-500 after:to-purple-600">
+						Certifications
+					</h2>
+					<ul class="list-none space-y-2">
+						<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">NPTEL – Ethical Hacking</li>
+						<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">JLPT N5</li>
+						<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">Google Cloud – GenAI Study Jam</li>
+						<li class="pl-6 relative before:content-['▸'] before:absolute before:left-0 before:text-indigo-500">CISCO CCNA – Networking, Cybersecurity</li>
 					</ul>
 				</div>
 			</section>
 
-			<section id="contact" class="section">
-				<div class="section-content">
-					<h2>Contact</h2>
-						<div class="contact-info">
-							<p>
-								<strong>Phone:</strong> +91 7598982124<br>
-								<strong>Email:</strong>
-								<a href="mailto:nayeemmohammed467@gmail.com">
-									<i class="fas fa-envelope"></i> nayeemmohammed467@gmail.com
-								</a>
-							</p>
-						</div>
-						<div class="social-links">
-							<a href="https://github.com/MohammedNayeemE" target="_blank">
-								<i class="fab fa-github"></i> GitHub
+			<!-- Contact -->
+			<section id="contact" class="min-h-screen flex items-center justify-center p-8 snap-start">
+				<div class="relative bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 max-w-4xl w-full p-10 animate-fadeInUp">
+					<h2 class="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent relative after:content-[''] after:block after:w-16 after:h-1 after:mx-auto after:mt-2 after:rounded after:bg-gradient-to-r after:from-indigo-500 after:to-purple-600">
+						Contact
+					</h2>
+
+					<!-- Contact Info -->
+					<div class="mb-6 text-gray-600">
+						<p class="mb-2">
+							<strong>Phone:</strong> +91 7598982124
+						</p>
+						<p>
+							<strong>Email:</strong>
+							<a href="mailto:nayeemmohammed467@gmail.com" class="text-indigo-600 hover:text-purple-600 transition">
+								<i class="fas fa-envelope"></i> nayeemmohammed467@gmail.com
 							</a>
-							<a href="https://www.linkedin.com/in/nayeemmohammed" target="_blank">
-								<i class="fab fa-linkedin"></i> LinkedIn
-							</a>
-							<a href="https://leetcode.com/u/MohammedNayeem/" target="_blank">
-								<i class="fas fa-code"></i> LeetCode
-							</a>
-							<a href="#" download>
-								<i class="fas fa-file-download"></i> Resume
-							</a>
-						</div>
+						</p>
+					</div>
+
+					<!-- Social Links -->
+					<div class="flex flex-wrap gap-4">
+						<a href="https://github.com/MohammedNayeemE" target="_blank"
+							class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition shadow">
+							<i class="fab fa-github"></i> GitHub
+						</a>
+						<a href="https://www.linkedin.com/in/nayeemmohammed" target="_blank"
+							class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition shadow">
+							<i class="fab fa-linkedin"></i> LinkedIn
+						</a>
+						<a href="https://leetcode.com/u/MohammedNayeem/" target="_blank"
+							class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition shadow">
+							<i class="fas fa-code"></i> LeetCode
+						</a>
+						<a href="#" download
+							class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-600 hover:text-white transition shadow">
+							<i class="fas fa-file-download"></i> Resume
+						</a>
+					</div>
 				</div>
 			</section>
 		</main>
 
-		<footer>
+		<!-- Footer -->
+		<footer class="bg-black/80 text-white text-center py-6 backdrop-blur">
 			<p>&copy; <span id="year"></span> 2025 Mohammed Nayeem</p>
 		</footer>
+
 	</body>
 </html>

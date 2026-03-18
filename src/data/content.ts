@@ -6,6 +6,7 @@ export const siteConfig = {
   availability: "Open to opportunities",
   tagLine: "Building AI systems and writing code that humans can read.",
   currentFocus: "SpringBoot + Distributed Systems",
+  resumeUrl: "./Nayeem_resume.pdf",
 };
 
 export const socialLinks = [
@@ -53,14 +54,21 @@ export const experience = [
   {
     company: "Chennai Institute of Technology",
     role: "B.E Computer Science",
-    period: "2021 — 2025",
+    period: "2022 — 2026",
     description:
       "Computer Science and Engineering with CGPA 8.91. Active in hackathons and competitive programming.",
     technologies: ["Algorithms", "Data Structures", "System Design"],
   },
 ];
 
-export const projects = [
+export const projects: Array<{
+  title: string;
+  description: string;
+  technologies: string[];
+  link: string;
+  featured: boolean;
+  image?: string;
+}> = [
   {
     title: "RiskEngine.ai",
     description:
@@ -73,7 +81,7 @@ export const projects = [
       "Redis",
       "Vision OCR",
     ],
-    link: "https://github.com/MohammedNayeemE",
+    link: "https://github.com/MohammedNayeemE/risk-engine",
     featured: true,
   },
   {
@@ -88,7 +96,7 @@ export const projects = [
       "TypeScript",
       "SQLite",
     ],
-    link: "https://github.com/MohammedNayeemE",
+    link: "https://github.com/MohammedNayeemE/upikhata",
     featured: true,
   },
   {
@@ -108,7 +116,15 @@ export const projects = [
 ];
 
 export const skills = {
-  primary: ["Python", "TypeScript", "Go", "React", "Next.js", "FastAPI"],
+  primary: [
+    "Python",
+    "TypeScript",
+    "Java",
+    "C++",
+    "React",
+    "Next.js",
+    "FastAPI",
+  ],
   secondary: ["LangChain", "LangGraph", "PostgreSQL", "Docker", "Redis", "AWS"],
   tools: ["Git", "Linux", "Neovim", "Tmux", "Docker", "GitHub Actions"],
 };
@@ -147,13 +163,22 @@ export const competitiveProgramming = {
   codeforces: { rating: 1192, problems: "200+" },
 };
 
+export const currentlyReading = {
+  title: "The Art of Readable Code",
+  authors: "Dustin Boswell & Trevor Foucher",
+  description:
+    "Practical techniques for writing code that's easy to understand. Changed how I think about naming, comments, and code structure.",
+  link: "https://www.oreilly.com/library/view/the-art-of/9781449318482/",
+  category: "Software Engineering",
+};
+
 export const books = [
   {
-    title: "The Art of Readable Code",
-    authors: "Dustin Boswell & Trevor Foucher",
+    title: "AI Engineering",
+    authors: "Chip Huyen",
     description:
-      "Practical techniques for writing code that's easy to understand. Changed how I think about naming, comments, and code structure.",
-    link: "https://www.oreilly.com/library/view/the-art-of/9781449318482/",
-    category: "Software Engineering",
+      "Comprehensive guide to building AI applications in production. Covers MLOps, system design for ML, and practical engineering principles for deploying AI at scale.",
+    link: "https://www.oreilly.com/library/view/ai-engineering/9781098166298/",
+    category: "AI/ML",
   },
 ];

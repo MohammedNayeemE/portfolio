@@ -1,6 +1,16 @@
 import { projects } from '../data/content'
 import styles from './Projects.module.css'
 
+// Helper to get project initials
+function getInitials(title: string): string {
+  return title
+    .split(' ')
+    .map(word => word[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2)
+}
+
 export function Projects() {
   const featuredProjects = projects.filter(p => p.featured)
   const otherProjects = projects.filter(p => !p.featured)
@@ -48,6 +58,19 @@ export function Projects() {
                     <li key={tech}>{tech}</li>
                   ))}
                 </ul>
+              </div>
+              <div className={styles.thumbnail}>
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} preview`}
+                    className={styles.thumbnailImage}
+                  />
+                ) : (
+                  <span className={styles.thumbnailPlaceholder}>
+                    {getInitials(project.title)}
+                  </span>
+                )}
               </div>
             </article>
           ))}

@@ -10,8 +10,9 @@
 
 .featuredCard {
   display: grid;
-  grid-template-columns: 60px 1fr;
+  grid-template-columns: 60px 1fr 220px;
   gap: var(--space-xl);
+  align-items: start;
 }
 
 .cardNumber {
@@ -67,6 +68,76 @@
 .techList li {
   font-size: 0.8125rem;
   color: var(--color-text-tertiary);
+}
+
+/* Thumbnail styles */
+.thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-alt) 0%,
+    var(--color-border) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(20%) saturate(80%) brightness(95%);
+  transition: filter var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+
+.featuredCard:hover .thumbnailImage {
+  filter: sepia(0%) saturate(100%) brightness(100%);
+  transform: scale(1.02);
+}
+
+.thumbnailPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-style: italic;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+/* Decorative corner accents for placeholder */
+.thumbnail::before,
+.thumbnail::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--color-text-tertiary);
+  border-style: solid;
+  opacity: 0.3;
+}
+
+.thumbnail::before {
+  top: 12px;
+  left: 12px;
+  border-width: 1px 0 0 1px;
+}
+
+.thumbnail::after {
+  bottom: 12px;
+  right: 12px;
+  border-width: 0 1px 1px 0;
 }
 
 .other {
@@ -129,6 +200,10 @@
   
   .cardNumber {
     padding-top: 0;
+  }
+
+  .thumbnail {
+    display: none;
   }
   
   .otherGrid {

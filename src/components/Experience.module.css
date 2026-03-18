@@ -9,7 +9,7 @@
 
 .job {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 180px 1fr 60px;
   gap: var(--space-3xl);
   padding: var(--space-2xl) 0;
   border-bottom: 1px solid var(--color-border);
@@ -65,6 +65,46 @@
   color: var(--color-text-tertiary);
 }
 
+/* Timeline styles */
+.timelineTrack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6px;
+}
+
+.timelineDot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--color-text);
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dotInner {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-text);
+}
+
+.timelineLine {
+  width: 2px;
+  flex: 1;
+  min-height: 40px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-text) 0%,
+    var(--color-border) 100%
+  );
+  margin-top: 8px;
+}
+
 @media (max-width: 768px) {
   .job {
     grid-template-columns: 1fr;
@@ -74,5 +114,9 @@
   .period {
     padding-top: 0;
     order: -1;
+  }
+
+  .timelineTrack {
+    display: none;
   }
 }

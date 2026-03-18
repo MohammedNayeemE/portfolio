@@ -1,0 +1,186 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) ease;
+}
+
+.backLink:hover {
+  color: var(--color-text);
+}
+
+.backArrow {
+  transition: transform var(--duration-fast) ease;
+}
+
+.backLink:hover .backArrow {
+  transform: translateX(-3px);
+}
+
+.main {
+  flex: 1;
+  padding: var(--space-4xl) 0;
+}
+
+.intro {
+  margin-bottom: var(--space-4xl);
+  max-width: 600px;
+}
+
+.title {
+  margin-bottom: var(--space-lg);
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.section {
+  margin-bottom: var(--space-4xl);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-xl);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.book,
+.currentBook {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: border-color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease;
+}
+
+.book:hover,
+.currentBook:hover {
+  border-color: var(--color-text-tertiary);
+  background-color: var(--color-bg-alt);
+}
+
+.currentBook {
+  border-width: 2px;
+}
+
+.bookLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-xl);
+  gap: var(--space-lg);
+}
+
+.bookContent {
+  flex: 1;
+}
+
+.category {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-sm);
+}
+
+.bookTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: var(--space-xs);
+}
+
+.authors {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.bookDescription {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  max-width: 540px;
+}
+
+.arrow {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  transition: transform var(--duration-normal) var(--ease-out),
+              color var(--duration-fast) ease;
+  margin-top: var(--space-sm);
+}
+
+.book:hover .arrow,
+.currentBook:hover .arrow {
+  transform: translate(2px, -2px);
+  color: var(--color-text);
+}
+
+.footer {
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.footerText {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.footerText a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footerText a:hover {
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: var(--space-3xl) 0;
+  }
+
+  .intro {
+    margin-bottom: var(--space-3xl);
+  }
+
+  .bookLink {
+    padding: var(--space-lg);
+  }
+  
+  .arrow {
+    display: none;
+  }
+}

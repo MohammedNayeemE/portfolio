@@ -39,6 +39,32 @@
   color: var(--color-text);
 }
 
+.resumeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  padding: 6px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: background-color var(--duration-fast) ease,
+              border-color var(--duration-fast) ease;
+}
+
+.resumeLink:hover {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-text-tertiary);
+}
+
+.resumeIcon {
+  transition: transform var(--duration-fast) ease;
+}
+
+.resumeLink:hover .resumeIcon {
+  transform: translateY(2px);
+}
+
 @media (max-width: 640px) {
   .nav {
     display: none;

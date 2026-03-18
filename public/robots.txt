@@ -1,0 +1,10 @@
+# robots.txt for Mohammed Nayeem Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nayeem.dev/sitemap.xml
+
+# Crawl-delay (optional, be polite to crawlers)
+Crawl-delay: 1

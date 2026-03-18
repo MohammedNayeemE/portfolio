@@ -1,0 +1,217 @@
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Graph grid */
+.grid {
+  position: absolute;
+  inset: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.2s forwards;
+}
+
+.gridLineH,
+.gridLineV {
+  position: absolute;
+  background-color: var(--color-border);
+}
+
+.gridLineH {
+  left: 0;
+  right: 0;
+  height: 1px;
+  opacity: 0.5;
+}
+
+.gridLineV {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  opacity: 0.5;
+}
+
+/* Golden spiral SVG */
+.spiral {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  color: var(--color-text);
+}
+
+.box1, .box2, .box3, .box4 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+}
+
+.box1 { animation: drawBox 1s ease-out 0.5s forwards; }
+.box2 { animation: drawBox 0.8s ease-out 0.8s forwards; }
+.box3 { animation: drawBox 0.6s ease-out 1s forwards; }
+.box4 { animation: drawBox 0.4s ease-out 1.2s forwards; }
+
+@keyframes drawBox {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.spiralPath {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: drawSpiral 2.5s ease-out 1.4s forwards;
+}
+
+@keyframes drawSpiral {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Phi annotation */
+.annotation {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 2s forwards;
+}
+
+.phi {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--color-text);
+}
+
+.value {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.05em;
+}
+
+/* Tracer dot */
+.tracer {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 3.5s forwards;
+}
+
+.tracerSvg {
+  width: 100%;
+  height: 100%;
+  color: var(--color-text);
+}
+
+.tracerDot {
+  filter: drop-shadow(0 0 4px var(--color-text));
+}
+
+/* Ratio marks */
+.ratioMarks {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 2.3s forwards;
+}
+
+.mark1 {
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-text);
+}
+
+.mark2 {
+  width: 65px;
+  height: 3px;
+  background-color: var(--color-text-tertiary);
+}
+
+/* Coordinate points */
+.points {
+  position: absolute;
+  inset: 0;
+}
+
+.point {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-text);
+  border-radius: 50%;
+  opacity: 0;
+  animation: pointPop 0.5s ease-out forwards;
+}
+
+.point:nth-child(1) { animation-delay: 2.6s; }
+.point:nth-child(2) { animation-delay: 2.8s; }
+.point:nth-child(3) { animation-delay: 3s; }
+
+@keyframes pointPop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .spiral,
+  .tracer {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .annotation {
+    top: 20px;
+    right: 25px;
+  }
+  
+  .phi {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    position: absolute;
+    top: 50%;
+    right: -60px;
+    transform: translateY(-50%);
+    opacity: 0.12;
+    width: 350px;
+    height: 350px;
+    pointer-events: none;
+  }
+}

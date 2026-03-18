@@ -1,0 +1,78 @@
+.experience {
+  border-top: 1px solid var(--color-border);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.job {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--space-3xl);
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.job:first-child {
+  padding-top: 0;
+}
+
+.job:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.period {
+  font-size: 0.875rem;
+  color: var(--color-text-tertiary);
+  padding-top: 4px;
+}
+
+.content {
+  max-width: 540px;
+}
+
+.role {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.company {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.description {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+}
+
+.techList li {
+  font-size: 0.8125rem;
+  color: var(--color-text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .job {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+  
+  .period {
+    padding-top: 0;
+    order: -1;
+  }
+}

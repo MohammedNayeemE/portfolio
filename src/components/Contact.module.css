@@ -1,0 +1,70 @@
+.contact {
+  border-top: 1px solid var(--color-border);
+}
+
+.content {
+  max-width: 540px;
+}
+
+.headline {
+  margin-bottom: var(--space-lg);
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.email {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--color-text);
+  transition: border-color var(--duration-fast) ease;
+}
+
+.email:hover {
+  border-color: transparent;
+}
+
+.social {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.socialLink {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.socialLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+.socialHandle {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) ease;
+}
+
+.socialLink:hover .socialHandle {
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .social {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+}

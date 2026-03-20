@@ -65,8 +65,125 @@
   transform: translateY(2px);
 }
 
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 110;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 1px;
+  transition: transform var(--duration-normal) ease,
+              opacity var(--duration-normal) ease;
+}
+
+.hamburgerLine:nth-child(1) {
+  transform: translateY(-5px);
+}
+
+.hamburgerLine:nth-child(3) {
+  transform: translateY(5px);
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(3) {
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+/* Mobile Overlay */
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(245, 241, 230, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration-normal) ease,
+              visibility var(--duration-normal) ease;
+}
+
+.mobileOverlayOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: var(--space-lg);
+  padding: 80px var(--space-lg) var(--space-xl);
+}
+
+.mobileNavLink {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) ease;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink:active {
+  color: var(--color-text);
+}
+
+.mobileResumeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: var(--color-text);
+  padding: 12px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin-top: var(--space-md);
+  transition: background-color var(--duration-fast) ease,
+              border-color var(--duration-fast) ease;
+}
+
+.mobileResumeLink:hover {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-text-tertiary);
+}
+
 @media (max-width: 640px) {
   .nav {
     display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileOverlay {
+    display: block;
   }
 }

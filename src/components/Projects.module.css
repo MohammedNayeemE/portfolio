@@ -2,6 +2,11 @@
   border-top: 1px solid var(--color-border);
 }
 
+/* Mobile Swipe Cards - hidden on desktop */
+.mobileSwipeCards {
+  display: none;
+}
+
 .featured {
   display: flex;
   flex-direction: column;
@@ -193,6 +198,17 @@
 }
 
 @media (max-width: 768px) {
+  /* Show swipe cards on mobile */
+  .mobileSwipeCards {
+    display: block;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Hide desktop featured layout on mobile */
+  .featured {
+    display: none;
+  }
+
   .featuredCard {
     grid-template-columns: 1fr;
     gap: var(--space-sm);

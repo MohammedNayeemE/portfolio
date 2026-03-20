@@ -1,0 +1,291 @@
+.swipeContainer {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  touch-action: pan-y;
+  overflow: visible;
+}
+
+/* Card Stack */
+.cardStack {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 360px;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  will-change: transform;
+  transition: box-shadow var(--duration-fast) ease;
+}
+
+.card:active {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Stacked cards behind */
+.card:nth-child(2) {
+  transform: scale(0.95) translateY(12px);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.card:nth-child(3) {
+  transform: scale(0.9) translateY(24px);
+  z-index: -2;
+  opacity: 0.4;
+}
+
+.card:nth-child(n+4) {
+  display: none;
+}
+
+/* Card being swiped */
+.cardSwiping {
+  transition: none;
+}
+
+/* Card Content */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-lg);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-bg-alt);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnailPlaceholder {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.05em;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+  flex: 1;
+}
+
+.techTag {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  padding: 4px 8px;
+  background: var(--color-bg-alt);
+  border-radius: 4px;
+}
+
+/* Swipe Indicators */
+.swipeIndicators {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+}
+
+.swipeIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+
+.swipeIndicator svg {
+  width: 16px;
+  height: 16px;
+}
+
+.indicatorLeft {
+  flex-direction: row;
+}
+
+.indicatorRight {
+  flex-direction: row-reverse;
+}
+
+/* Swipe direction overlays */
+.swipeOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.swipeOverlayLeft {
+  background: rgba(200, 200, 200, 0.9);
+}
+
+.swipeOverlayRight {
+  background: rgba(34, 139, 34, 0.9);
+}
+
+.swipeOverlayVisible {
+  opacity: 1;
+}
+
+.swipeOverlayText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Opening overlay */
+.openingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(245, 241, 230, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  z-index: 10;
+  animation: fadeIn var(--duration-fast) ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.openingText {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-text);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Swipe hint animation */
+.hintActive {
+  animation: wiggle 1.5s ease-in-out 2;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  20% { transform: translateX(-15px) rotate(-3deg); }
+  40% { transform: translateX(15px) rotate(3deg); }
+  60% { transform: translateX(-10px) rotate(-2deg); }
+  80% { transform: translateX(10px) rotate(2deg); }
+}
+
+/* Hint text below cards */
+.hintText {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  opacity: 1;
+  transition: opacity var(--duration-normal) ease;
+}
+
+.hintTextHidden {
+  opacity: 0;
+}
+
+.hintText svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Card exit animations */
+.cardExitLeft {
+  animation: exitLeft 0.3s ease forwards;
+}
+
+.cardExitRight {
+  animation: exitRight 0.3s ease forwards;
+}
+
+@keyframes exitLeft {
+  to {
+    transform: translateX(-150%) rotate(-20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes exitRight {
+  to {
+    transform: translateX(150%) rotate(20deg);
+    opacity: 0;
+  }
+}

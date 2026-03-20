@@ -1,4 +1,5 @@
 import { projects } from '../data/content'
+import { ProjectSwipeCards } from './ProjectSwipeCards'
 import styles from './Projects.module.css'
 
 // Helper to get project initials
@@ -20,6 +21,12 @@ export function Projects() {
       <div className="container">
         <p className="section-label">Selected Work</p>
         
+        {/* Mobile: Swipeable Cards */}
+        <div className={styles.mobileSwipeCards}>
+          <ProjectSwipeCards />
+        </div>
+
+        {/* Desktop: Grid Layout */}
         <div className={styles.featured}>
           {featuredProjects.map((project, index) => (
             <article key={project.title} className={styles.featuredCard}>
